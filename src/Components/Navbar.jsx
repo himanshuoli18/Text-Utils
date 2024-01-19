@@ -5,6 +5,9 @@ function Navbar(props) {
     const handleDarkModeColorClick = (color) => {
         props.toggleTheme(color);
     }
+    const handleContacts = (number) => {
+        props.toggleContacts(number)
+    }
     return (
         <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
             <div className="container-fluid">
@@ -23,10 +26,10 @@ function Navbar(props) {
                         <li className="nav-item dropdown">
                             <Link className="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contact</Link>
                             <ul className="dropdown-menu">
-                                <li><Link className="dropdown-item" to="/">Linkedin</Link></li>
-                                <li><Link className="dropdown-item" to="/">Telegram</Link></li>
+                                <li><Link className="dropdown-item" onClick={() => handleContacts('1')} to="/">E-mail</Link></li>
                                 <li><hr className="dropdown-divider" /></li>
-                                <li><Link className="dropdown-item" to="/">v1.0</Link></li>
+                                <li><Link className="dropdown-item" onClick={() => handleContacts('2')} to="/">Linkedin</Link></li>
+                                <li><Link className="dropdown-item" onClick={() => handleContacts('3')} to="/">Telegram</Link></li>
                             </ul>
                         </li>
                         <li className="nav-item">

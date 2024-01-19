@@ -52,6 +52,12 @@ function App() {
             setShowAlert(true)
         }
     };
+    // const toggleContacts = (number) => {
+    //     switch(number) {
+    //         case 1:
+    //             <a href="https://www.linkedin.com/in/himanshuoli/" target="_blank">I</a>
+    //     }
+    // }
 
     return (
         <>
@@ -60,6 +66,7 @@ function App() {
             <Routes>
                 <Route exact path="/" element={<Textform textboxText='Enter Text Here' mode={darkMode} btnColor={buttonColor}/>} />
                 <Route path="/about" element={<About mode={darkMode}/>} />
+                {/* <Route path='/contact' element={<Contact />} /> */}
             </Routes>
         </>
     )
