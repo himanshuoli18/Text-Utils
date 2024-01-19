@@ -33,6 +33,19 @@ function Textform(props) {
         window.speechSynthesis.speak(msg);
     }
 
+    // Convert to Titlecase
+    const handleTitleCaseClick = () => {
+        let paragraphs = text.split('\n');
+        for (let i = 0; i < paragraphs.length; i++) {
+            let words = paragraphs[i].toLowerCase().split(/[\s]/);
+            for (let j = 0; j < words.length; j++) {
+                words[j] = words[j].charAt(0).toUpperCase() + words[j].slice(1);
+            }
+            paragraphs[i] = words.join(' ');
+        }
+        setText(paragraphs.join('\n'));
+    }
+    
     // Showing change on textarea whenever click encounters
     const handleOnChange = (event) => {
         setText(event.target.value);
@@ -62,6 +75,7 @@ function Textform(props) {
             </div>
             <button type="button" onClick={handleLowerCaseClick} className={`btn btn-${props.btnColor} my-2 mx-2`} aria-label="Lowercase">Lowercase</button>
             <button type="button" onClick={handleUpperCaseClick} className={`btn btn-${props.btnColor} my-2 mx-2`} aria-label="Uppercase">Uppercase</button>
+            <button type="button" onClick={handleTitleCaseClick} className={`btn btn-${props.btnColor} my-2 mx-2`} aria-label="Copy Text">Titlecase</button>
             <button type="button" onClick={handleClearClick} className={`btn btn-${props.btnColor} my-2 mx-2`} aria-label="Clear Text">Clear Text</button>
             <button type="button" onClick={handleCopyClick} className={`btn btn-${props.btnColor} my-2 mx-2`} aria-label="Copy Text">Copy Text</button>
             <button type="button" onClick={handleSpeak} className={`btn btn-${props.btnColor} my-2 mx-2`} aria-label="Copy Text">Speak</button>

@@ -2,22 +2,9 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 function Navbar(props) {
-    
     const handleDarkModeColorClick = (color) => {
         props.toggleTheme(color);
         props.toggleButtons(color);
-    }
-    const toggleButtons = (color) => {
-        switch(color) {
-            case 'blue':
-                return 'primary';
-            case 'green':
-                return 'success';
-            case 'red':
-                return 'danger';
-            default:
-                return 'warning';
-        }
     }
     return (
         <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
@@ -32,7 +19,7 @@ function Navbar(props) {
                             <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/">About</Link>
+                            <Link className="nav-link" to="/about">About</Link>
                         </li>
                         <li className="nav-item dropdown">
                             <Link className="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contact</Link>

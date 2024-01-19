@@ -1,9 +1,9 @@
 import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 import Navbar from './Components/Navbar.jsx'
 import Textform from './Components/Textform'
 import Alert from './Components/Alert'
-import { Router, Route } from 'react-router-dom'
 import About from './Components/About'
 
 function App() {
@@ -12,7 +12,6 @@ function App() {
     const [buttonText,setButtonText] = useState('Dark Mode')
     const [buttonColor,setButtonColor] = useState('dark')
     const [showAlert,setShowAlert] = useState(false)
-    const [searchButtonColor,setSeachButtonColor] = useState('warning')
     
     const toggleMode = () => {
         if(darkMode==='light') {
@@ -56,14 +55,12 @@ function App() {
 
     return (
         <>
-            <Router>
-                <Navbar mode={darkMode} toggleMode={toggleMode} text={buttonText} color={darkModeButtonColor} toggleTheme={toggleTheme}/>
-                {showAlert && <Alert onClose={() => setShowAlert(false)} />}
-                <Route path='/' element={<Textform textboxText='Enter Text Here' mode={darkMode} btnColor={buttonColor}/>}/>
-                <Route path='/about' element={<About mode={darkMode}/>}/>
-            </Router>
-            {/* <Textform textboxText='Enter Text Here' mode={darkMode} btnColor={buttonColor}/>
-            <About mode={darkMode}/> */}
+            <Navbar mode={darkMode} toggleMode={toggleMode} text={buttonText} color={darkModeButtonColor} toggleTheme={toggleTheme}/>
+            {showAlert && <Alert onClose={() => setShowAlert(false)} />}
+            <Routes>
+                <Route exact path="/" element={<Textform textboxText='Enter Text Here' mode={darkMode} btnColor={buttonColor}/>} />
+                <Route path="/about" element={<About mode={darkMode}/>} />
+            </Routes>
         </>
     )
 }
