@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom'
 function Navbar(props) {
     const handleDarkModeColorClick = (color) => {
         props.toggleTheme(color);
-        props.toggleButtons(color);
     }
     return (
         <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
