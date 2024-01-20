@@ -66,7 +66,6 @@ function App() {
             <Routes>
                 <Route exact path="/" element={<Textform textboxText='Enter Text Here' mode={darkMode} btnColor={buttonColor}/>} />
                 <Route path="/about" element={<About mode={darkMode}/>} />
-                {/* <Route path='/contact' element={<Contact />} /> */}
             </Routes>
         </>
     )
