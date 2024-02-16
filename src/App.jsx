@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 import Navbar from './Components/Navbar.jsx'
+import Contact from './Components/Contact.jsx'
 import Textform from './Components/Textform'
 import Alert from './Components/Alert'
 import About from './Components/About'
@@ -52,10 +53,14 @@ function App() {
             setShowAlert(true)
         }
     };
+
     // const toggleContacts = (number) => {
     //     switch(number) {
     //         case 1:
-    //             <a href="https://www.linkedin.com/in/himanshuoli/" target="_blank">I</a>
+    //             <a href="https://www.linkedin.com/in/himanshuoli/" target="_blank"></a>
+    //             break;
+    //         case 2:
+                
     //     }
     // }
 
@@ -66,6 +71,7 @@ function App() {
             <Routes>
                 <Route exact path="/" element={<Textform textboxText='Enter Text Here' mode={darkMode} btnColor={buttonColor}/>} />
                 <Route path="/about" element={<About mode={darkMode}/>} />
+                <Route path="/contact" element={<Contact mode={darkMode}/>} />
             </Routes>
         </>
     )

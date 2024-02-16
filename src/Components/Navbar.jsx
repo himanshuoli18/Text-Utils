@@ -24,11 +24,11 @@ function Navbar(props) {
                             <Link className="nav-link" to="/about">About</Link>
                         </li>
                         <li className="nav-item dropdown">
-                            <Link className="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contact</Link>
+                            <Link className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contact</Link>
                             <ul className="dropdown-menu">
-                                <li><Link className="dropdown-item" onClick={() => handleContacts('1')} to="/">E-mail</Link></li>
-                                <li><hr className="dropdown-divider" /></li>
+                                <li><Link className="dropdown-item" onClick={() => handleContacts('1')} to="/contact">E-mail</Link></li>
                                 <li><Link className="dropdown-item" onClick={() => handleContacts('2')} to="/">Linkedin</Link></li>
+                                <li><hr className="dropdown-divider" /></li>
                                 <li><Link className="dropdown-item" onClick={() => handleContacts('3')} to="/">Telegram</Link></li>
                             </ul>
                         </li>
